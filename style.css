@@ -1,0 +1,364 @@
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1e29; /* Fondo oscuro exterior como en tu app */
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Tarjeta Principal */
+.card-container {
+    background-color: #f1ded7; /* Tono pastel del ejemplo */
+    width: 750px;
+    height: 420px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* --- LADO IZQUIERDO --- */
+.content-left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+.happy-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.2rem;
+    color: #ff6b81;
+    text-shadow: 3px 3px 0px #fff;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.date-badge {
+    background-color: #f38375;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+.click-btn {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.click-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff2e44;
+}
+
+/* --- LADO DERECHO --- */
+.content-right {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.avatar-frame {
+    width: 220px;
+    height: 220px;
+    border: 4px solid #333;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    animation: floatAnimation 3.5s ease-in-out infinite alternate;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-badge {
+    background-color: #f38375;
+    color: white;
+    padding: 6px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* --- ANIMACIONES Y DECORACIONES --- */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes scaleStar {
+    0%, 100% { transform: scale(0.8); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+.star {
+    position: absolute;
+    user-select: none;
+    pointer-events: none; /* Para que no estorben si alguien intenta hacer clic cerca */
+    display: inline-block;
+}
+
+/* Animación 1: Flotar suavemente hacia arriba y abajo */
+@keyframes floatGentle {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Animación 2: Latido y parpadeo (ideal para estrellas y corazones) */
+@keyframes pulseGlow {
+    0%, 100% { transform: scale(0.85); opacity: 0.6; }
+    50% { transform: scale(1.15); opacity: 1; }
+}
+
+/* --- POSICIONES DE LAS ESQUINAS --- */
+
+/* Esquina Superior Izquierda */
+.star-top-left-1 {
+    top: 20px;
+    left: 25px;
+    font-size: 1.4rem;
+    color: #ff6b81;
+    animation: pulseGlow 2.5s infinite ease-in-out;
+}
+.star-top-left-2 {
+    top: 65px;
+    left: 60px;
+    font-size: 1.1rem;
+    animation: floatGentle 3s infinite ease-in-out;
+    animation-delay: 0.5s;
+}
+
+/* Esquina Inferior Izquierda */
+.star-bottom-left-1 {
+    bottom: 25px;
+    left: 30px;
+    font-size: 1.3rem;
+    animation: floatGentle 4s infinite ease-in-out;
+}
+.star-bottom-left-2 {
+    bottom: 70px;
+    left: 75px;
+    font-size: 1rem;
+    color: #ffa502;
+    animation: pulseGlow 2s infinite ease-in-out;
+    animation-delay: 0.3s;
+}
+
+/* Esquina Superior Derecha */
+.star-top-right-1 {
+    top: 25px;
+    right: 35px;
+    font-size: 2.2rem; /* El globo más grande */
+    animation: floatGentle 3.5s infinite ease-in-out;
+}
+.star-top-right-2 {
+    top: 85px;
+    right: 40px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Esquina Inferior Derecha */
+.star-bottom-right-1 {
+    bottom: 30px;
+    right: 30px;
+    font-size: 1.6rem;
+    animation: floatGentle 4.5s infinite ease-in-out;
+    animation-delay: 0.2s;
+}
+.star-bottom-right-2 {
+    bottom: 80px;
+    right: 75px;
+    font-size: 1.5rem;
+    animation: pulseGlow 2.8s infinite ease-in-out;
+}
+
+/* Extras en los bordes del centro para rellenar */
+.star-center-top {
+    top: 15px;
+    left: 48%;
+    font-size: 1.2rem;
+    animation: pulseGlow 3.2s infinite ease-in-out;
+}
+.star-center-bottom {
+    bottom: 20px;
+    left: 45%;
+    font-size: 1.1rem;
+    animation: floatGentle 3.8s infinite ease-in-out;
+}
+
+/* --- VENTANA EMERGENTE (MODAL) CORREGIDA --- */
+.modal-overlay {
+    position: fixed; /* Ocupa toda la pantalla flotando sobre la tarjeta */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-oscuro */
+    display: none; /* Se oculta por completo por defecto */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Se asegura de estar al frente de todo */
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+/* Clase que añade JavaScript al hacer clic */
+.modal-overlay.show {
+    display: flex; /* Se activa el contenedor */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 35px;
+    border-radius: 15px;
+    width: 450px;
+    max-width: 90%;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: translateY(-50px);
+    transition: transform 0.4s ease;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0); /* Sube/baja con suavidad al aparecer */
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    color: #ff4757;
+    margin-bottom: 15px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.modal-content p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.signature {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff6b81 !important;
+}
+
+/* --- ESTILOS PARA LA PAGINACIÓN DEL MENSAJE --- */
+.modal-pages {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Oculta las páginas individuales */
+.modal-page {
+    display: none;
+    width: 100%;
+}
+
+/* Muestra la página activa */
+.modal-page.active {
+    display: block;
+    animation: fadeInPage 0.4s ease-in-out;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; transform: translateX(10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Contenedor de los botones */
+.modal-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.nav-btn {
+    background-color: #f38375;
+    color: white;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background-color: #ff4757;
+}
+
+.nav-btn:disabled {
+    background-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.page-indicator {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: bold;
+}

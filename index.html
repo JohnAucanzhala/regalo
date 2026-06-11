@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Birthday Gift</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente bonita de Google Fonts para el estilo Cute -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Contenedor Principal (Tarjeta de cumpleaños) -->
+    <div class="card-container">
+        
+        <!-- LADO IZQUIERDO: Textos y Botón -->
+        <div class="content-left">
+            <h1 class="happy-title">🎉Happy<br>Birthday🎉</h1>
+            <div class="date-badge">★ 12 JUNIO 2000 ★</div>
+            <button id="openBtn" class="click-btn">Abrir aqui ❤️</button>
+        </div>
+
+        <!-- LADO DERECHO: Imagen/Ilustración -->
+        <div class="content-right">
+            <div class="avatar-frame">
+                <!-- Usamos tu imagen de la carpeta img -->
+                <img src="img/1hb.jpg" alt="Cumpleañero/a" class="avatar-img">
+            </div>
+            <div class="name-badge">❤️ Gordis ❤️</div>
+        </div>
+
+        <!-- Decoraciones flotantes de fondo -->
+        <div class="star star-top-left-1">★</div>
+        <div class="star star-top-left-2">✨</div>
+        <div class="star star-bottom-left-1">💖</div>
+        <div class="star star-bottom-left-2">✦</div>
+        
+        <div class="star star-top-right-1">🎈</div>
+        <div class="star star-top-right-2">★</div>
+        <div class="star star-bottom-right-1">🎂</div>
+        <div class="star star-bottom-right-2">🎉</div>
+        
+        <div class="star star-center-top">✨</div>
+        <div class="star star-center-bottom">💖</div>
+    </div>
+
+    <!-- VENTANA EMERGENTE (MODAL) PARA EL MENSAJE OCULTO -->
+    <!-- VENTANA EMERGENTE (MODAL) PARA EL MENSAJE OCULTO -->
+    <div id="messageModal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="closeBtn" class="close-modal">&times;</span>
+            <h2>¡Feliz Cumpleaños! 🧸</h2>
+            
+            <!-- CONTENEDOR DE PÁGINAS -->
+            <div class="modal-pages">
+                <!-- Página 1 -->
+                <div class="modal-page active">
+                    <p>
+                        ¡Oa Gordis espero que este detalle le guste. Sorpresa creo que como su ingeniero favorito esperaba algun dia algo asi , jaj
+                        En estos momentos especiales aveces las palabras se pueden quedar cortas , para todo lo que puedo sentir.
+                        Primero que todo ¡Feliz Cumpleaños¡ que aun año mas de su vida siempre sea para exitos.  Le deseo lo mejor se que cada vez el numero
+                        se pone mas serio, pero no es nada malo, por que tiene muchas cosas que cumplir, tiene que llegar a sus metas y espero 
+                        seguir formando parte de su vida. 
+
+                    </p>
+                </div>
+
+                <!-- Página 2 -->
+                <div class="modal-page">
+                    <p>
+                        En todo momento espero que las cosas sean de bien para usted, que este año sea de prosperidad , se que esta mas cerca de su meta Principal
+                        asi que no puede darse a morir, aveces necesitamos soltar cosas pero tiene que seguir.Sino ahi estare asi sea de un gordillo le llevare hasta
+                        donde una vez se propuso llegar.
+                        Tambien algo que pasa este dia es que cumplimos ya 7 años de pareja jaja otro numero que es mas serio y representa mucho para los 2 ya que hemos sido 
+                        compañeros en esta vida con sus cosas buenas y malas. Pero aqui estamos cerca de algo que nos hara muy felices, solo puedo agradecerle por su tiempo,
+                        paciencia, sus palabras, compañia y tranquilidad que me da. Seremos diferentes pero me hace sentir contento por que estos 7 años no han sido en vano
+                        ya que estoy con una persona incondicionable y maravillosa que me hace ¡Feliz.  
+                    </p>
+                </div>
+
+                <!-- Página 3 (Última) -->
+                <div class="modal-page">
+                    <p>
+                        Cuente conmigo Gordis estare en todo lo que me permita, le apoyare, seguire siendo yo. Apesar de ciertas dificultades en nuestras vidas
+                        sabremos salir adelante de la patita los 2 juntos. 
+                        Gracias por existir en mi vida y formar parte de ello
+                        Abracin
+                        Ahora si me queda decirle que espero le guste lo que le hice en años futuros seran mas cosas que espere sorpresas ajaj 
+                        Que tenga un excelente dia estamos aqui siempre con la Nuci esperandole en casa . Le daremos un pastelin que se lo merece por todo lo que hace
+                        y significa 🎂✨ le pedire que cierre los ojos y pida un deseo ..... Se cumplira ya vera.  
+                        Feliz cumpleaños Gordis viva muchos años mas, que una persona como usted hacen del mundo un lugar mejor. 
+                    </p>
+                    <p class="signature">Con mucho amor, John Nuci Sandy ✨</p>
+                </div>
+            </div>
+
+            <!-- BOTONES DE NAVEGACIÓN -->
+            <div class="modal-navigation">
+                <button id="prevPageBtn" class="nav-btn" disabled>Atrás</button>
+                <span id="pageIndicator" class="page-indicator">1 / 3</span>
+                <button id="nextPageBtn" class="nav-btn">Siguiente</button>
+            </div>
+
+        </div>
+    </div>
+    <audio id="bgMusic" src="img/ELIOT.mp3" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
